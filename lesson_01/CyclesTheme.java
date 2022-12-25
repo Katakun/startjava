@@ -115,5 +115,92 @@ public class CyclesTheme {
         System.out.println();
       }
     }
+
+    /*
+     * Проверка количества двоек на четность/нечетность
+     * дано число 3242592
+     * подсчитайте в цикле while количество 2, а затем проверьте получившееся
+     * значение на четность/нечетность
+     * отобразите результат:
+     * число X содержит N (четное/нечетное) количество двоек
+     * 
+     */
+    System.out.println("\n5. Проверка количества двоек на четность/нечетность");
+    number = 3242592;
+    int count2 = 0;
+    tmp = number;
+
+    while (tmp > 0) {
+      int n = tmp % 10;
+      if (n == 2) {
+        count2++;
+      }
+      tmp /= 10;
+    }
+    String oddOrEven = count2 % 2 == 0 ? "четное" : "нечетное";
+    System.out.printf("число %d содержит %d %s количество двоек%n", number, count2, oddOrEven);
+
+    /*
+     * Отображение фигур в консоли
+     * отобразите геометрические фигуры, используя:
+     * для прямоугольника только for
+     * для прямоугольного треугольника только while
+     * для второго треугольника только do-while
+     * каждую фигуру выводите на новой строке
+     * 
+     ********** ##### $
+     ********** #### $$
+     ********** ### $$$
+     ********** ## $$
+     ********** # $
+     */
+
+    System.out.println("\n6. Отображение фигур в консоли\n");
+
+    for (int i = 0; i < 5; i++) {
+      for (int j = 0; j < 10; j++) {
+        System.out.print("*");
+      }
+      System.out.println();
+    }
+    System.out.println();
+
+    int i = 5;
+    int j = 5;
+    while (i > 0) {
+      while (j > 0) {
+        System.out.print("#");
+        j--;
+      }
+      System.out.println();
+
+      i--;
+      j = i;
+    }
+    System.out.println();
+
+    i = 5;
+    j = 0;
+    int jcount = 1;
+    boolean toggle = false;
+    do {
+
+      do {
+        System.out.print("$");
+        j++;
+      } while (j < jcount);
+      System.out.println();
+      j = 0;
+
+      if (jcount == 3) {
+        toggle = true;
+      }
+      if (toggle) {
+        jcount--;
+      } else {
+        jcount++;
+      }
+      i--;
+    } while (i > 0);
   }
 }
