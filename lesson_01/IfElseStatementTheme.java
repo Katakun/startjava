@@ -156,7 +156,7 @@ class IfElseSTatement {
     System.out.printf("Прибыль за год: %s%d руб.%n", sign, profitPerYear);
 
     System.out.println("\n9. Подсчет количества банкнот");
-    int needSum = 765;
+    int needSum = 342;
     int hundredDollarAmount = 10;
     int tenDollarAmount = 5;
     int oneDollarAmount = 50;
@@ -192,24 +192,7 @@ class IfElseSTatement {
     System.out.printf("$100 купюр %d штук в сумме $%d%n", hundredToPerson, hundredToPerson * 100);
     System.out.printf("$10 купюр %d штук в сумме $%d%n", tenToPerson, tenToPerson * 10);
     System.out.printf("$1 купюр %d штук в сумме $%d%n", oneToPerson, oneToPerson);
-
-    /*
-     * из банкомата вам необходимо снять 567 USD
-     * подсчитайте, с помощью какого количества банкнот номиналом 1, 10, 100
-     * банкомат может выдать необходимую сумму
-     * при этом в банкомате осталось:
-     * 10 банкнот номиналом 100
-     * 5 банкнот номиналом 10
-     * 50 банкнот номиналом 1
-     * если каких-то банкнот не хватает, то их нужно заменить банкнотами меньшего
-     * номинала
-     * проведите обратный расчет начальной суммы по полученному количеству банкнот,
-     * чтобы убедиться в правильности вычислений
-     * выведите в консоль:
-     * номиналы банкнот
-     * требуемое их количество
-     * выдаваемую сумму
-     * 
-     */
+    int sumToPerson = hundredToPerson * 100 + tenToPerson * 10 + oneToPerson;
+    System.out.printf("Выдананая сумма = $%d%n", sumToPerson);
   }
 }
