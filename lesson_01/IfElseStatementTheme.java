@@ -146,7 +146,14 @@ class IfElseSTatement {
     System.out.printf("%d средний процент по предметам%n", averagePercent);
 
     System.out.println("\n8. Расчет прибыли за год");
+    int rentPerMonth = 5_000;
+    int incomePerMonth = 13_000;
+    int costPerMonth = 9_000;
+    int profitPerMonth = incomePerMonth - costPerMonth - rentPerMonth;
+    int profitPerYear = profitPerMonth * 12;
 
+    String sign = profitPerYear < 0 ? "" : "+";
+    System.out.printf("Прибыль за год: %s%d руб.%n", sign, profitPerYear);
     /*
      * продавец снимает помещение за 5 000 руб. в месяц
      * в среднем в месяц он продает товара на 13 000 руб.
