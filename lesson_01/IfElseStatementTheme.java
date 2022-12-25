@@ -154,17 +154,62 @@ class IfElseSTatement {
 
     String sign = profitPerYear < 0 ? "" : "+";
     System.out.printf("Прибыль за год: %s%d руб.%n", sign, profitPerYear);
+
+    System.out.println("\n9. Подсчет количества банкнот");
+    int needSum = 765;
+    int hundredDollarAmount = 10;
+    int tenDollarAmount = 5;
+    int oneDollarAmount = 50;
+
+    int hundredToPerson = 0;
+    int tenToPerson = 0;
+    int oneToPerson = 0;
+
+    System.out.printf("Нужно выдать сумму $%d%n", needSum);
+    if (needSum / 100 < hundredDollarAmount) {
+      hundredToPerson = needSum / 100;
+      needSum = needSum % 100;
+    } else if (needSum / 10 > hundredDollarAmount) {
+      hundredToPerson = hundredDollarAmount;
+      needSum = needSum - (hundredDollarAmount * 100);
+    }
+
+    if (needSum / 10 < tenDollarAmount) {
+      tenToPerson = needSum / 10;
+      needSum = needSum % 10;
+    } else if (needSum / 10 > tenDollarAmount) {
+      tenToPerson = tenDollarAmount;
+      needSum = needSum - (tenDollarAmount * 10);
+    }
+
+    if (needSum < oneDollarAmount) {
+      oneToPerson = needSum;
+      needSum = 0;
+    } else if (needSum > oneDollarAmount) {
+      System.out.println("В банкомате не хватает денег");
+    }
+
+    System.out.printf("$100 купюр %d штук в сумме $%d%n", hundredToPerson, hundredToPerson * 100);
+    System.out.printf("$10 купюр %d штук в сумме $%d%n", tenToPerson, tenToPerson * 10);
+    System.out.printf("$1 купюр %d штук в сумме $%d%n", oneToPerson, oneToPerson);
+
     /*
-     * продавец снимает помещение за 5 000 руб. в месяц
-     * в среднем в месяц он продает товара на 13 000 руб.
-     * при этом его себестоимость равна 9 000 руб.
-     * подсчитайте годовую прибыль
-     * отобразите ее в консоли в следующем формате, например:
-     * прибыль за год: -1000 руб.
-     * прибыль за год: +3000 руб.
-     * если прибыль положительная, то рядом с числом необходимо отображать +
+     * из банкомата вам необходимо снять 567 USD
+     * подсчитайте, с помощью какого количества банкнот номиналом 1, 10, 100
+     * банкомат может выдать необходимую сумму
+     * при этом в банкомате осталось:
+     * 10 банкнот номиналом 100
+     * 5 банкнот номиналом 10
+     * 50 банкнот номиналом 1
+     * если каких-то банкнот не хватает, то их нужно заменить банкнотами меньшего
+     * номинала
+     * проведите обратный расчет начальной суммы по полученному количеству банкнот,
+     * чтобы убедиться в правильности вычислений
+     * выведите в консоль:
+     * номиналы банкнот
+     * требуемое их количество
+     * выдаваемую сумму
      * 
      */
-
   }
 }
