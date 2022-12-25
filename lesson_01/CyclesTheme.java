@@ -202,5 +202,80 @@ public class CyclesTheme {
       }
       i--;
     } while (i > 0);
+
+    /*
+     * Отображение ASCII-символов
+     * • отобразите, используя for, данные столбцов Dec и Char (и названия столбцов)
+     * • из таблицы
+     * • выведите на консоль:
+     * - символы, идущие до цифр и имеющие нечетные коды
+     * - маленькие английские буквы, имеющие четные коды
+     * • данные каждого столбца должны быть выровнены по правому краю
+     * 
+     */
+    System.out.println("\n7. Отображение ASCII-символов");
+    System.out.println(" dec | char");
+    for (int k = 0; k <= 122; k++) {
+      if (k < 48 && k % 2 == 0) {
+        System.out.printf("%4d | %1c%n", k, k);
+      }
+      if (k >= 97 && k <= 122 && k % 2 != 0) {
+        System.out.printf("%4d | %1c%n", k, k);
+      }
+    }
+
+    /*
+     * Проверка, является ли число палиндромом
+     * • дано число 1234321
+     * • проверьте, является ли оно палиндромом (читается одинаково с любой стороны)
+     * • использовать Math.pow нельзя
+     * • отобразите в консоли:
+     * -- число X является палиндромом
+     */
+    System.out.println("\n8. Проверка, является ли число палиндромом");
+    number = 12321;
+    int reverseNumber = 0;
+    tmp = number;
+    while (tmp > 0) {
+      reverseNumber *= 10;
+      reverseNumber = reverseNumber + tmp % 10;
+      tmp /= 10;
+    }
+    String no = number == reverseNumber ? "является" : "не является";
+    System.out.println(reverseNumber);
+    System.out.printf("Число %d %s палиндромом%n", number, no);
+
+    /*
+     * Определение, является ли число счастливым
+     * • счастливым называется число, сумма первых трех цифр которого
+     * равна сумме последних
+     * • возьмите любое шестизначное число
+     * • подсчитайте сумму каждой его половины
+     * • отобразите в консоли:
+     * -- каждую тройку цифр в формате “Сумма цифр abc = sum”
+     * -- является число счастливым или нет
+     * 
+     */
+    System.out.println("\n9. Определение, является ли число счастливым");
+    number = 523145;
+    int sumLast = 0;
+    int sumFirst = 0;
+    int count = 0;
+    tmp = number;
+
+    while (tmp > 0) {
+      if (count < 3) {
+        sumLast += tmp % 10;
+      } else {
+        sumFirst += tmp % 10;
+      }
+      tmp /= 10;
+      count++;
+    }
+    String word = sumFirst == sumLast ? "" : "не";
+    System.out.printf("Сумма цифр %d = %d%n", number / 1000, sumFirst);
+    System.out.printf("Сумма цифр %d = %d%n", number % 1000, sumLast);
+    System.out.printf("%d %s является счастливым%n", number, word);
+
   }
 }
