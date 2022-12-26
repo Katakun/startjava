@@ -277,5 +277,26 @@ public class CyclesTheme {
     System.out.printf("Сумма цифр %d = %d%n", number % 1000, sumLast);
     System.out.printf("%d %s является счастливым%n", number, word);
 
+    /*
+     * Вывод таблицы умножения Пифагора
+     * • отобразите таблицу умножения в точности, как в образце, включая
+     * горизонтальные и вертикальные линии
+     * • не добавляйте между строками и столбцами лишние пустоты
+     * • используйте цикл for
+     */
+    System.out.println("\n10. Вывод таблицы умножения Пифагора\n");
+
+    for (int row = 1; row < 10; row++) {
+      for (int col = 1; col < 10; col++) {
+        System.out.printf("%3d", row * col);
+        if (col == 1) {
+          System.out.print(" |");
+        }
+      }
+      System.out.println();
+      if (row == 1) {
+        System.out.println("-----------------------------");
+      }
+    }
   }
 }
