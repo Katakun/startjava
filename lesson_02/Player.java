@@ -11,7 +11,7 @@ public class Player {
         this.name = name;
     }
     public int guessNumber() {
-        System.out.printf("Игрок %s введите число: ", name);
+        System.out.printf("%s введите число: ", name);
         int guessNumber = scanner.nextInt();
         scanner.nextLine();
         return guessNumber;
