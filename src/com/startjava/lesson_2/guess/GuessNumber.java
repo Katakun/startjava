@@ -6,6 +6,7 @@ public class GuessNumber {
 
     private Player player1;
     private Player player2;
+
     Scanner scanner = new Scanner(System.in);
     boolean isGameOn = true;
 
@@ -14,10 +15,11 @@ public class GuessNumber {
         this.player2 = player2;
     }
 
+
+
     public void startGame() {
         int player1num;
         int player2num;
-
         while (isGameOn) {
             int secretNumber = (int) (Math.random() * 11);
             while (true) {
@@ -42,6 +44,8 @@ public class GuessNumber {
             }
         }
     }
+
+
 
     public boolean isGuess(int number, int secretNumber) {
         if (number > secretNumber) {
