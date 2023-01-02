@@ -6,6 +6,7 @@ public class GuessNumberTest {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        String userAnswer = "y";
 
         System.out.print("Введите имя первого игрока: ");
         String namePlayer1 = scanner.nextLine();
@@ -16,7 +17,15 @@ public class GuessNumberTest {
         Player player2 = new Player(namePlayer2);
 
         GuessNumber game = new GuessNumber(player1, player2);
-        game.startGame();
+        while ("y".equals(userAnswer)) {
+            game.startGame();
+            do {
+                System.out.println("Желаете повторить игру? [y/n]");
+                userAnswer = scanner.nextLine();
+            } while (!"y".equals(userAnswer) && !"n".equals(userAnswer));
+        }
+
+
         scanner.close();
     }
 }
