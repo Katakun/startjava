@@ -5,25 +5,24 @@ import java.util.Scanner;
 
 public class Bookcase {
 
-    private int bookAmount;
+private int bookCount = 0;
     private Book[] bookshelf = new Book[10];
     Scanner scanner = new Scanner(System.in);
-    private int bookCount = 0;
 
 
     //    добавить книгу
     public void addBook() {
         System.out.println("Добавление книги на полку");
-        System.out.print("author: ");
+        System.out.print("автор: ");
         String author = scanner.nextLine();
-        System.out.print("title: ");
+        System.out.print("название: ");
         String title = scanner.nextLine();
-        System.out.print("year: ");
+        System.out.print("год: ");
         int year = Integer.parseInt(scanner.nextLine());
         Book book = new Book(author, title, year);
         bookshelf[bookCount] = book;
         bookCount++;
-        System.out.println("Книга: " + book + " добавлена на полку\n");
+        System.out.println("\nКнига: " + book + " добавлена на полку\n");
     }
 
     //    найти книгу
@@ -44,7 +43,7 @@ public class Bookcase {
 
     //    удалить книгу
     public void deleteBook() {
-        System.out.print("Введите название книги для удаления: ");
+        System.out.print("\nВведите название книги для удаления: ");
         String bookTitle = scanner.nextLine();
         int deletIndex = -1;
         Book[] tmp = new Book[bookshelf.length];
@@ -65,7 +64,7 @@ public class Bookcase {
 
     //    получить все книги (только для визуализации шкафа)
     public void showBooks() {
-        System.out.printf("%nВ шкафу %d книги и свободно %d полок%n%n",
+        System.out.printf("В шкафу %d книги и свободно %d полок%n%n",
                 bookCount, bookshelf.length - bookCount);
         int shelfWidth = 50;
 
@@ -90,7 +89,7 @@ public class Bookcase {
 
     //    получить количество книг в шкафу
     public int bookAmount() {
-        return -1;
+        return bookCount;
     }
 
     //    получить количество свободных полок
